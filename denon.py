@@ -24,6 +24,36 @@ class Denon:
         self.sendCommand("MVUP")
     def volDown(self):
         self.sendCommand("MVDOWN")
+    #Mute
+    def muteOn(self):
+        self.sendCommand("MUON")
+    def muteOff(self):
+        self.sendCommand("MUOFF")
+    def muteStat(self):
+        self.sendCommand("MU?")
 
-    def close(self):
-        self.ser.close()
+    #Source Selector
+    def selPhono(self):
+        self.sendCommand("SIPHONO")
+    def selCD(self):
+        self.sendCommand("SICD")
+    def selTuner(self):
+        self.sendCommand("SITUNER")
+    def selDVD(self):
+        self.sendCommand("SIDVD")
+    def selTV(self):
+        self.sendCommand("SITV/CBL")
+    def selVCR(self):
+        self.sendCommand("SIVCR")
+    def selDVR(self):
+        self.sendCommand("SIDVR")
+    def selVAUX(self):
+        self.sendCommand("SIV.AUX")
+    def selXM(self):
+        self.sendCommand("SIXM")
+    def selIPod(self):
+        self.sendCommand("SIIPOD")
+    def selAUX(self):
+        self.sendCommand("SIAUX")
+    def inputStatus(self):
+        self.sendCommand("SI?")
