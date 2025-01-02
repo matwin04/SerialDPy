@@ -53,6 +53,7 @@ def mute(action):
     return redirect("/")
 @app.route("/source/<source>")
 def selectSource(source):
+
     if source == "PHONO":
         result = device.selPhono()
     elif source == "CD":
@@ -77,4 +78,31 @@ def selectSource(source):
         result = device.selAUX()
     else:
         result = "Invalid Action"
+    return redirect("/")
+@app.route("/record/<source>")
+def recSelectSource(source):
+    if source == "PHONO":
+        result = device.recSelPhono()
+    elif source == "CD":
+        result = device.recSelCD()
+    elif source == "TUNER":
+        result = device.recSelTuner()
+    elif source == "DVD":
+        result = device.recSelDVD()
+    elif source == "TV+CBL":
+        result = device.recSelTV()
+    elif source == "VCR":
+        result = device.recSelVCR()
+    elif source == "DVR":
+        result = device.recSelDVR()
+    elif source == "VAUX":
+        result = device.recSelVAUX()
+    elif source == "IPOD":
+        result = device.recSelIPOD()
+    elif source == "AUX":
+        result = device.recSelAUX()
+    elif source == "CANCEL":
+        result = device.recModeCancel()
+    else:
+        result = "Invalid Selection"
     return redirect("/")

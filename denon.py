@@ -57,3 +57,38 @@ class Denon:
         self.sendCommand("SIAUX")
     def inputStatus(self):
         self.sendCommand("SI?")
+    
+    #Record Selector
+    def recSelPhono(self):
+        self.sendCommand("SRPHONO")
+    def recSelCD(self):
+        self.sendCommand("SRCD")
+    def recSelTuner(self):
+        self.sendCommand("SRTUNER")
+    def recSelDVD(self):
+        self.sendCommand("SRDVD")
+    def recSelTV(self):
+        self.sendCommand("SRTV/CBL")
+    def recSelVCR(self):
+        self.sendCommand("SRVCR")
+    def recSelDVR(self):
+        self.sendCommand("SRDVR")
+    def recSelVAUX(self):
+        self.sendCommand("SRVAUX")
+    def recSelXM(self):
+        self.sendCommand("SRXM")
+    def recSelIPOD(self):
+        self.sendCommand("SRIPOD")
+    def recSelAUX(self):
+        self.sendCommand("SRAUX")
+    def recModeCancel(self):
+        self.sendCommand("SRSOURCE")
+    #Video Scale
+    def vssc48p(self):
+        self.sendCommand("VSSC48P")
+    def vssc10i(self):
+        self.sendCommand("VSSC10I")
+    def vssc10p(self):
+        self.sendCommand("VSSC10P")
+    def vssc72p(self):
+        self.sendCommand("VSSC72P")
