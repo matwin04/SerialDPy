@@ -1,8 +1,12 @@
-from flask import Flask, render_template
+from flask import * 
 from denon import Denon
 
 app = Flask(__name__)
-denon_device = None  # Will be initialized in main.py
+def getDevice():
+    port = "/dev/ttyUSB0"
+    baudRate = 9600
+    return Denon(port,baudRate)
+device = getDevice()
 
 @app.route("/")
 def index():
@@ -11,33 +15,33 @@ def index():
 @app.route("/pw/<action>")
 def power(action):
     if action == "on":
-        result = denon_device.powerOn()
+        result = device.powerOn()
     elif action == "off":
-        result = denon_device.powerOff()
+        result = device.powerOff()
     elif action == "status":
-        result = denon_device.powerStat()
+        result = device.powerStat()
     else:
         result = "Invalid action"
-    return render_template("result.html", result=result)
+    return redirect("/")
 
 @app.route("/vol/<action>")
 def volume(action):
     if action == "up":
-        result = denon_device.volUp()
+        result = device.volUp()
     elif action == "down":
-        result = denon_device.volDown()
+        result = device.volDown()
     else:
         result = "Invalid action"
-    return render_template("result.html", result=result)
+    return redirect("/")
 
 @app.route("/mute/<action>")
 def mute(action):
     if action == "on":
-        result = denon_device.muteOn()
+        result = device.muteOn()
     elif action == "off":
-        result = denon_device.muteOff()
+        result = device.muteOff()
     elif action == "status":
-        result = denon_device.muteStat()
+        result = device.muteStat()
     else:
         result = "Invalid action"
-    return render_template("result.html", result=result)
+    return redirect("/")
