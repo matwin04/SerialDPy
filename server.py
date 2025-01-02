@@ -1,12 +1,19 @@
-from flask import * 
+from cgitb import reset
+
+from flask import *
 from denon import Denon
 
 app = Flask(__name__)
+
+
 def getDevice():
     port = "/dev/ttyUSB0"
     baudRate = 9600
-    return Denon(port,baudRate)
+    return Denon(port, baudRate)
+
+
 device = getDevice()
+
 
 @app.route("/")
 def index():
@@ -16,7 +23,18 @@ def index():
     except Exception as e:
         currentSource = f"Error fetching source status {e}"
 
-    return render_template("index.html",currentSource=currentSource)
+    return render_template("index.html", currentSource=currentSource)
+
+
+@app.route("/allcommands")
+def allCommands():
+    return render_template("allcomands.html")
+
+
+@app.route("/help")
+def help():
+    return render_template("help.html")
+
 
 @app.route("/power/<action>")
 def power(action):
@@ -30,6 +48,7 @@ def power(action):
         result = "Invalid action"
     return redirect("/")
 
+
 @app.route("/vol/<action>")
 def volume(action):
     if action == "up":
@@ -39,6 +58,7 @@ def volume(action):
     else:
         result = "Invalid action"
     return redirect("/")
+
 
 @app.route("/mute/<action>")
 def mute(action):
@@ -51,9 +71,10 @@ def mute(action):
     else:
         result = "Invalid action"
     return redirect("/")
+
+
 @app.route("/source/<source>")
 def selectSource(source):
-
     if source == "PHONO":
         result = device.selPhono()
     elif source == "CD":
@@ -79,6 +100,8 @@ def selectSource(source):
     else:
         result = "Invalid Action"
     return redirect("/")
+
+
 @app.route("/record/<source>")
 def recSelectSource(source):
     if source == "PHONO":
@@ -105,4 +128,54 @@ def recSelectSource(source):
         result = device.recModeCancel()
     else:
         result = "Invalid Selection"
+    return redirect("/")
+
+
+@app.route("/sd/<sd>")
+def sd(sd):
+    if sd == "AUTO":
+        result = device.sdAuto()
+    elif sd == "HDMI":
+        result = device.sdHDMI()
+    elif sd == "DIGITAL":
+        result = device.sdDigital()
+    elif sd == "ANALOG":
+        result = device.sdAnalog()
+    else:
+        result = "Invalid Action"
+    return redirect("/")
+
+
+@app.route("/ms/<ms>")
+def ms(ms):
+    if ms == "DIRECT":
+        result = device.msDirect()
+    elif ms == "PURE DIRECT":
+        result = device.msPureDirect()
+    elif ms == "STEREO":
+        result = device.msStereo()
+    elif ms == "STANDARD":
+        result = device.msStandard()
+    elif ms == "DOLBYDIGITAL":
+        result = device.msDolbyDigital()
+    elif ms == "DTS":
+        result = device.msDTS()
+    elif ms == "NEURAL":
+        result = device.msNeural()
+    elif ms == "7CH":
+        result = device.ms7ch()
+    elif ms == "ROCK":
+        result = device.msRock()
+    elif ms == "JAZZ":
+        result = device.msJazz()
+    elif ms == "MONO":
+        result = device.msMonoMovie()
+    elif ms == "MATRIX":
+        result = device.msMatrix()
+    elif ms == "VIDEOGAME":
+        result = device.msVideoGame()
+    elif ms == "VIRTUAL":
+        result = device.msVirtual()
+    else:
+        result = "Error Invalid Selection"
     return redirect("/")

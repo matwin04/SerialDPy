@@ -92,3 +92,61 @@ class Denon:
         self.sendCommand("VSSC10P")
     def vssc72p(self):
         self.sendCommand("VSSC72P")
+
+    #SD
+    def sdAuto(self):
+        self.sendCommand("SDAUTO")
+        print("SD-SDAUTO")
+    def sdHDMI(self):
+        self.sendCommand("SDHDMI")
+        print("SD-SDHDMI")
+    def sdDigital(self):
+        self.sendCommand("SDDIGITAL")
+        print("SD-SDDIGITAL")
+    def sdAnalog(self):
+        self.sendCommand("SDANALOG")
+        print("SD-SDANALOG")
+
+    #Surround Mode
+    def msDirect(self):
+        self.sendCommand("MSDIRECT")
+        print("Suround-DIRECT")
+    def msPureDirect(self):
+        self.sendCommand("MSPURE DIRECT")
+        print("MS-PURE DIRECT")
+    def msStereo(self):
+        self.sendCommand("MSSTEREO")
+        print("MS-STEREO")
+    def msStandard(self):
+        self.sendCommand("MSSTANDARD")
+        print("MS-STANDARD")
+    def msDolbyDigital(self):
+        self.sendCommand("MSDOLBY DIGITAL")
+        print("MS-DOLBY DIGITAL")
+    def msDTS(self):
+        self.sendCommand("MSDTS SURROUND")
+        print("MS-DTS SURROUND")
+    def msNeural(self):
+        self.sendCommand("MSNEURAL")
+        print("MS-NEURAL")
+    def ms7ch(self):
+        self.sendCommand("MS7CH STEREO")
+        print("MS-7ch Stereo")
+    def msRock(self):
+        self.sendCommand("MSROCK ARENA")
+        print("MS-ROCK ARENA")
+    def msJazz(self):
+        self.sendCommand("MSJAZZ CLUB")
+        print("MS-JAZZ CLUB")
+    def msMonoMovie(self):
+        self.sendCommand("MSMONO MOVIE")
+        print("MS-MONO MOVIE")
+    def msMatrix(self):
+        self.sendCommand("MSMATRIX")
+        print("MS-MATRIX")
+    def msVideoGame(self):
+        self.sendCommand("MSVIDEO GAME")
+        print("MS-VIDEO GAME")
+    def msVirtual(self):
+        self.sendCommand("MSVIRTUAL")
+        print("MS-VIRTUAL")
