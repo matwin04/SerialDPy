@@ -12,7 +12,7 @@ device = getDevice()
 def index():
     return render_template("index.html")
 
-@app.route("/pw/<action>")
+@app.route("/power/<action>")
 def power(action):
     if action == "on":
         result = device.powerOn()
@@ -44,4 +44,31 @@ def mute(action):
         result = device.muteStat()
     else:
         result = "Invalid action"
+    return redirect("/")
+@app.route("/source/<source>")
+def selectSource(source):
+    if source == "PHONO":
+        result = device.selPhono()
+    elif source == "CD":
+        result = device.selCD()
+    elif source == "TUNER":
+        result = device.selTuner()
+    elif source == "DVD":
+        result = device.selDVD()
+    elif source == "TV+CBL":
+        result = device.selTV()
+    elif source == "VCR":
+        result = device.selVCR()
+    elif source == "DVR":
+        result = device.selDVR()
+    elif source == "VAUX":
+        result = device.selVAUX()
+    elif source == "XM":
+        result = device.selXM()
+    elif source == "IPod":
+        result = device.selIPod()
+    elif source == "AUX":
+        result = device.selAUX()
+    else:
+        result = "Invalid Action"
     return redirect("/")
