@@ -10,7 +10,13 @@ device = getDevice()
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    try:
+        device.inputStatus()
+        currentSource = "Input Status Command sent"
+    except Exception as e:
+        currentSource = f"Error fetching source status {e}"
+
+    return render_template("index.html",currentSource=currentSource)
 
 @app.route("/power/<action>")
 def power(action):
