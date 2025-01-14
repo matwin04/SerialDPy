@@ -1,5 +1,3 @@
-from cgitb import reset
-
 from flask import *
 from denon import Denon
 
