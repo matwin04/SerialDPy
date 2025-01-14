@@ -13,6 +13,7 @@ class Denon:
         except serial.SerialException as e:
             print(f"Error writing to serial port : {e}")
     #Power
+
     def powerOn(self):
         self.sendCommand("PWON")
     def powerOff(self):
@@ -92,7 +93,8 @@ class Denon:
         self.sendCommand("VSSC10P")
     def vssc72p(self):
         self.sendCommand("VSSC72P")
-
+    def vsauto(self):
+        self.sendCommand("VSSCAUTO")
     #SD
     def sdAuto(self):
         self.sendCommand("SDAUTO")

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81543bfc-ca2d-40d1-bfa6-2cd66ed7a79c" name="Changes" comment="12. Added SD/MS Commands">
+    <list default="true" id="81543bfc-ca2d-40d1-bfa6-2cd66ed7a79c" name="Changes" comment="13. Added SD/MS Commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/status.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735847727846</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="13. Added SD/MS Commands">
+      <option name="closed" value="true" />
+      <created>1736878832261</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736878832261</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +124,7 @@
     <MESSAGE value="6" />
     <MESSAGE value="7" />
     <MESSAGE value="12. Added SD/MS Commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="12. Added SD/MS Commands" />
+    <MESSAGE value="13. Added SD/MS Commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="13. Added SD/MS Commands" />
   </component>
 </project>

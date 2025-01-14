@@ -24,9 +24,9 @@ def index():
     return render_template("index.html", currentSource=currentSource)
 
 
-@app.route("/allcommands")
+@app.route("/debug/status")
 def allCommands():
-    return render_template("allcomands.html")
+    return render_template("status.html")
 
 
 @app.route("/help")
